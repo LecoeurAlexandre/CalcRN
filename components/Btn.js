@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 export default function Btn(props) {
-  return (
-    <View style= {props.typeBtn == "operator" ? [styles.btn, styles.operator] : props.typeBtn == "number" ? [styles.btn, styles.number] : [styles.btn, styles.initFunction]}>
-      <Text style={styles.btnContent}>{props.value}</Text>
-    </View>
+    return (
+    <Pressable onPress={()=> props.prepareOperation(props.value)} style= {props.typeBtn == "operator" ? [styles.btn, styles.operator] : props.typeBtn == "number" ? [styles.btn, styles.number] : [styles.btn, styles.initFunction]}>
+        <Text style={styles.btnContent}>{props.value}</Text>
+    </Pressable>
   )
 }
 

@@ -2,36 +2,42 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Btn from './Btn'
 
-export default function Keypad() {
-  return (
+export default function Keypad(props) {
+    function prepareOperation(value) {
+        console.log(value)
+        props.setOperation(props.operation += value)
+        //operation += value
+        console.log(props.operation)
+    }
+    return (
     <View>
         <View style={styles.displayBtn}>
-            <Btn value={"+"} typeBtn = {"operator"}></Btn>
-            <Btn value={"-"} typeBtn = {"operator"}></Btn>
-            <Btn value={"/"} typeBtn = {"operator"}></Btn>
-            <Btn value={"*"} typeBtn = {"operator"}></Btn>
+            <Btn prepareOperation={prepareOperation} value={"+"} typeBtn = {"operator"}></Btn>
+            <Btn prepareOperation={prepareOperation} value={"-"} typeBtn = {"operator"}></Btn>
+            <Btn prepareOperation={prepareOperation} value={"/"} typeBtn = {"operator"}></Btn>
+            <Btn prepareOperation={prepareOperation} value={"*"} typeBtn = {"operator"}></Btn>
         </View>
         <View style={styles.displayBtn}>
-            <Btn value={"7"} typeBtn = {"number"}></Btn>
-            <Btn value={"8"} typeBtn = {"number"}></Btn>
-            <Btn value={"9"} typeBtn = {"number"}></Btn>
+            <Btn prepareOperation={prepareOperation} value={"7"} typeBtn = {"number"}></Btn>
+            <Btn prepareOperation={prepareOperation} value={"8"} typeBtn = {"number"}></Btn>
+            <Btn prepareOperation={prepareOperation} value={"9"} typeBtn = {"number"}></Btn>
         </View>
         <View style={styles.displayBtn}>
-            <Btn value={"4"} typeBtn = {"number"}></Btn>
-            <Btn value={"5"} typeBtn = {"number"}></Btn>
-            <Btn value={"6"} typeBtn = {"number"}></Btn>
+            <Btn prepareOperation={prepareOperation} value={"4"} typeBtn = {"number"}></Btn>
+            <Btn prepareOperation={prepareOperation} value={"5"} typeBtn = {"number"}></Btn>
+            <Btn prepareOperation={prepareOperation} value={"6"} typeBtn = {"number"}></Btn>
         </View>
         <View style={styles.displayBtn}>
-            <Btn value={"1"} typeBtn = {"number"}></Btn>
-            <Btn value={"2"} typeBtn = {"number"}></Btn>
-            <Btn value={"3"} typeBtn = {"number"}></Btn>
+            <Btn prepareOperation={prepareOperation} value={"1"} typeBtn = {"number"}></Btn>
+            <Btn prepareOperation={prepareOperation} value={"2"} typeBtn = {"number"}></Btn>
+            <Btn prepareOperation={prepareOperation} value={"3"} typeBtn = {"number"}></Btn>
         </View>
         <View style={styles.displayBtn}>
-            <Btn value={"0"} typeBtn = {"number"}></Btn>
-            <Btn value={"Enter"}></Btn>
+            <Btn prepareOperation={prepareOperation} value={"0"} typeBtn = {"number"}></Btn>
+            <Btn prepareOperation={prepareOperation} value={"Enter"}></Btn>
         </View>
         <View style={styles.displayBtn}>
-            <Btn value={"C"}></Btn>
+            <Btn prepareOperation={prepareOperation} value={"C"}></Btn>
         </View>
     </View>
   )

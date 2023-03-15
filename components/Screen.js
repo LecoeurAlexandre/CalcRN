@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-export default function Screen() {
+export default function Screen(props) {
   return (
     <View style={styles.displayScreen}>
-      <Text style={styles.displayResult}>0</Text>
+      <Text style={styles.displayResult}>{props.operation}</Text>
     </View>
   )
 }

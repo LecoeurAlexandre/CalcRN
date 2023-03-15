@@ -1,15 +1,17 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import Screen from './Screen.js'
 import Keypad from './Keypad.js'
 
 export default function Frame() {
-  return (
+    const [operation, setOperation] = useState("")
+  
+    return (
     <View style={styles.container}>
       <Text style={styles.title}>Calculatrice</Text>
       <View style={styles.border}>
-        <Screen></Screen>
-        <Keypad></Keypad>
+        <Screen operation={operation}></Screen>
+        <Keypad setOperation={setOperation} operation={operation}></Keypad>
       </View>
     </View>
   )
