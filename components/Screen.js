@@ -13,7 +13,7 @@ export default function Screen(props) {
 const styles = StyleSheet.create({
     displayScreen : {
       backgroundColor : "black",
-      height : 100,
+      height : 120,
       justifyContent : "flex-end",
       alignItems : "flex-end",
       marginBottom : 10,
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
       paddingEnd : 10,
     },
     displayOperation : {
-      height : 30,
+      height : 40,
       color : "white",
       fontSize : 20,
       padding : 5
