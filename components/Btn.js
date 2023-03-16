@@ -1,22 +1,25 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text } from 'react-native'
 import React from 'react'
 
-export default function Btn(props) {
+export default function Btn({value, onPress, typeBtn}) {
     return (
-    <Pressable onPress={()=> props.prepareOperation(props.value)} style= {props.typeBtn == "operator" ? [styles.btn, styles.operator] : props.typeBtn == "number" ? [styles.btn, styles.number] : [styles.btn, styles.initFunction]}>
-        <Text style={styles.btnContent}>{props.value}</Text>
+    <Pressable onPress={onPress} style= {typeBtn == "operator" ? [styles.btn, styles.operator] : typeBtn == "number" ? [styles.btn, styles.number] : [styles.btn, styles.initFunction]}>
+        <Text style={styles.btnContent}>{value}</Text>
     </Pressable>
   )
 }
 
 const styles = StyleSheet.create({
     btn : {
-        borderWidth: 3,
+        borderWidth: 7,
         borderColor : "grey",
         justifyContent : 'center',
         alignItems : 'center',
         flex : 1,
-        height : 80
+        height : 80,
+        borderBottomWidth : 6,
+        borderBottomColor : "#3B3B3A",
+        
     },
     operator : {
         backgroundColor : "#9DA4B0"
@@ -28,7 +31,7 @@ const styles = StyleSheet.create({
         backgroundColor : "#51668A"
     },
     btnContent : {
-        fontSize : 20,
+        fontSize : 25,
         fontWeight : "bold"
     }
 })

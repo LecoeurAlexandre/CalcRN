@@ -4,21 +4,32 @@ import React from 'react'
 export default function Screen(props) {
   return (
     <View style={styles.displayScreen}>
-      <Text style={styles.displayResult}>{props.operation}</Text>
+      <Text style={styles.displayOperation}>{props.stringOperation}</Text>
+      <Text style={styles.displayResult}>{props.firstNumber}</Text>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
     displayScreen : {
-        backgroundColor : "black",
-        height : 100,
-        justifyContent : "flex-end",
-        alignItems : "flex-end",
+      backgroundColor : "black",
+      height : 100,
+      justifyContent : "flex-end",
+      alignItems : "flex-end",
+      marginBottom : 10,
+      borderBottomWidth : 6,
+      borderBottomColor : "#3B3B3A"
     },
     displayResult : {
-        color : "white",
-        fontSize : 50,
-        paddingEnd : 10
+      height : 70,
+      color : "white",
+      fontSize : 50,
+      paddingEnd : 10,
+    },
+    displayOperation : {
+      height : 30,
+      color : "white",
+      fontSize : 20,
+      padding : 5
     }
 })
